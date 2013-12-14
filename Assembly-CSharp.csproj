@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{CCB2ABD5-D89E-3981-591C-2052CC49B82D}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_1;UNITY_4_2;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\ARTIFICE\AR\InvertCamera.cs" />
+     <Compile Include="Assets\ARTIFICE\AR\Manager.cs" />
+     <Compile Include="Assets\ARTIFICE\AR\VideoRenderer.cs" />
+     <Compile Include="Assets\ARTIFICE\Helper\Avatar\BurstBubble.cs" />
+     <Compile Include="Assets\ARTIFICE\Helper\Avatar\SpawnBubbleOnW.cs" />
+     <Compile Include="Assets\ARTIFICE\Interaction\GUI\ITSelectionGUI.cs" />
+     <Compile Include="Assets\ARTIFICE\Interaction\GUI\NetworkITSelectionGUI.cs" />
+     <Compile Include="Assets\ARTIFICE\Interaction\InteractionFramework\InteractionBase.cs" />
+     <Compile Include="Assets\ARTIFICE\Interaction\InteractionFramework\ObjectSelectionBase.cs" />
+     <Compile Include="Assets\ARTIFICE\Interaction\InteractionTechniques\GoGoInteraction.cs" />
+     <Compile Include="Assets\ARTIFICE\Interaction\InteractionTechniques\HomerInteraction.cs" />
+     <Compile Include="Assets\ARTIFICE\Interaction\InteractionTechniques\SelectorInteraction.cs" />
+     <Compile Include="Assets\ARTIFICE\Interaction\InteractionTechniques\VirtualHandInteraction.cs" />
+     <Compile Include="Assets\ARTIFICE\MoCap\Avatar.cs" />
+     <Compile Include="Assets\ARTIFICE\MoCap\TrackBone.cs" />
+     <Compile Include="Assets\ARTIFICE\Network\NetworkAttributeSynchronization.cs" />
+     <Compile Include="Assets\ARTIFICE\Network\NetworkBase.cs" />
+     <Compile Include="Assets\ARTIFICE\Network\NetworkGUI.cs" />
+     <Compile Include="Assets\ARTIFICE\Network\SpawnPrefab.cs" />
+     <Compile Include="Assets\ARTIFICE\ObjectControllers\ExclusiveAccessObjectController.cs" />
+     <Compile Include="Assets\ARTIFICE\ObjectControllers\NetworkObjectController.cs" />
+     <Compile Include="Assets\ARTIFICE\ObjectControllers\ObjectController.cs" />
+     <Compile Include="Assets\ARTIFICE\ObjectControllers\UserManagementObjectController.cs" />
+     <Compile Include="Assets\ARTIFICE\ObjectControllers\UserManager.cs" />
+     <Compile Include="Assets\ARTIFICE\Tracking\MultiMarkerSwitch.cs" />
+     <Compile Include="Assets\ARTIFICE\Tracking\TrackFramework\TrackBase.cs" />
+     <Compile Include="Assets\ARTIFICE\Tracking\TrackFramework\TrackMMPart.cs" />
+     <Compile Include="Assets\ARTIFICE\Tracking\TrackFramework\TrackProvider.cs" />
+     <Compile Include="Assets\ARTIFICE\Tracking\TrackMarker.cs" />
+     <Compile Include="Assets\ARTIFICE\Tracking\TrackMultiMarker.cs" />
+     <Compile Include="Assets\ARTIFICE\Tracking\TrackSpaceMouse.cs" />
+     <Compile Include="Assets\checkpoint.cs" />
+     <Compile Include="Assets\crashForce.cs" />
+     <Compile Include="Assets\flyTest.cs" />
+     <Compile Include="Assets\flyTest2.cs" />
+     <Compile Include="Assets\flyTest3.cs" />
+     <None Include="Assets\fly_gestures.xml" />
+     <None Include="Assets\ARTIFICE\LGPL.txt" />
+ <Reference Include="UnityInterface">
+ <HintPath>Assets\UnityInterface.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
