@@ -62,9 +62,9 @@ public class NetworkGUI : MonoBehaviour {
     /// OnGUI is called for rendering and handling GUI events.
     /// </summary>
 	void OnGUI () {
-		Rect windowRect = new Rect (0,0,240,140);
+		Rect windowRect = new Rect (0,20,240,140);
 		if (!(Network.peerType == NetworkPeerType.Disconnected)) {
-			windowRect = new Rect (0,0,240,140);
+			windowRect = new Rect (0,20,240,140);
 		}
 		windowRect = GUI.Window(0, windowRect, MakeWindow, "Network Controls");
 	}
