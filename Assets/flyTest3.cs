@@ -48,8 +48,8 @@ public class flyTest3 : MonoBehaviour {
 	
 		void OnGUI()
 		{
-		    GUI.Label(new Rect(10,10,200,20), "Lifes: "+lifes);
-			GUI.Label(new Rect(10,25,200,20), "Energy: "+energy);
+		    GUI.Label(new Rect(10,110,200,20), "Lifes: "+lifes);
+			GUI.Label(new Rect(10,125,200,20), "Energy: "+energy);
 		
 			if(showEnergyLoss){
 				GUI.Label(new Rect(200,200,200,20), "Energy loss!");
