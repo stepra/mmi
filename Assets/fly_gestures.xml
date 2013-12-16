@@ -1,5 +1,5 @@
 <sensor>
-	<tracker>OpenNI</tracker>
+	<tracker>Microsoft</tracker>
 	<mirrormode>true</mirrormode>
 	<smoothing>true</smoothing>
 	<smoothingfactor>0.5</smoothingfactor>
@@ -23,7 +23,7 @@
 		</input>
 		<output type="0">
 			<descriptor>hold</descriptor>
-			<descriptor>s</descriptor>
+			<descriptor>w</descriptor>
 			<descriptor>until complete</descriptor>
 			<descriptor>5</descriptor>
 		</output>
@@ -33,12 +33,12 @@
 			<descriptor>lean</descriptor>
 			<descriptor>backward</descriptor>
 			<descriptor>at least</descriptor>
-			<descriptor>15</descriptor>
+			<descriptor>10</descriptor>
 			<descriptor>degrees</descriptor>
 		</input>
 		<output type="0">
 			<descriptor>hold</descriptor>
-			<descriptor>w</descriptor>
+			<descriptor>s</descriptor>
 			<descriptor>until complete</descriptor>
 			<descriptor>0</descriptor>
 		</output>
@@ -95,6 +95,30 @@
 			<descriptor>b</descriptor>
 			<descriptor>for</descriptor>
 			<descriptor>1</descriptor>
+		</output>
+	</gesture>
+	<gesture name="Gesture 7" timeout="0">
+		<input type="1">
+			<descriptor>left hand</descriptor>
+			<descriptor>above</descriptor>
+			<descriptor>waist</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>5</descriptor>
+			<descriptor>centimeters</descriptor>
+		</input>
+		<input type="1">
+			<descriptor>right hand</descriptor>
+			<descriptor>above</descriptor>
+			<descriptor>waist</descriptor>
+			<descriptor>at least</descriptor>
+			<descriptor>5</descriptor>
+			<descriptor>centimeters</descriptor>
+		</input>
+		<output type="0">
+			<descriptor>hold</descriptor>
+			<descriptor>m</descriptor>
+			<descriptor>until complete</descriptor>
+			<descriptor>0</descriptor>
 		</output>
 	</gesture>
 </gestures>
