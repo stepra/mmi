@@ -133,6 +133,7 @@ public class TrackSpaceMouse : TrackProvider
 		}
 		else if (_is1stPersonNonMirrowActive)
 		{
+			
 			_compensateOTRotation = Quaternion.Euler(270.0f, 180.0f, 180.0f); // TODO: find angles which compensate OT rotation to 0/0/0 -> with this rotated to 360/0/0
 			_zeroValues = new Vector3(360.0f, 0.0f, 0.0f);
 		}
@@ -189,10 +190,11 @@ public class TrackSpaceMouse : TrackProvider
 	private void handlePosition(Vector3 position)
 	{
 		
+		
 		// if button 2 has been released -> (de)active translation
 		if (button2State == 2) 
 		{
-			
+			/*
 			if(_translateIsActive)
 			{
 				_translateIsActive = false;
@@ -203,12 +205,13 @@ public class TrackSpaceMouse : TrackProvider
 				_translateIsActive = true;
 				Debug.Log("Translate activated");
 			}
+			*/
 		}
 		
 		if (_translateIsActive)
 		{
 			// sum up position values
-			position = (position * base.scalePosition) + gameObject.transform.localPosition;
+			position =  gameObject.transform.localPosition + (position * base.scalePosition) ;
 			transform.localPosition = position;
 		}
 	}

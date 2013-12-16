@@ -80,6 +80,8 @@
      <Compile Include="Assets\flyTest.cs" />
      <Compile Include="Assets\flyTest2.cs" />
      <Compile Include="Assets\flyTest3.cs" />
+     <Compile Include="Assets\followCharacter.cs" />
+     <Compile Include="Assets\moveToxin.cs" />
      <None Include="Assets\fly_gestures.xml" />
      <None Include="Assets\ARTIFICE\LGPL.txt" />
  <Reference Include="UnityInterface">

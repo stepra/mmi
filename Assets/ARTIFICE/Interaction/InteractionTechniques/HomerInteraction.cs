@@ -72,7 +72,7 @@ public class HomerInteraction : ObjectSelectionBase
 		line = null;
 		
         //find interaction origion game object
-        interaction_origin = GameObject.Find("InteractionOrigin");
+        interaction_origin = GameObject.Find("InreractionOrigin");
         
 		tracker = GameObject.Find("TrackerObject");
 		
