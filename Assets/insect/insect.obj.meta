@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: 8bd37f41de199884e9e4c9af1570c6e7
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: WHITE_GLASS
+    100004: Wing_Piv01
+    100006: Wing_Piv02
+    100008: Wing_Piv03
+    100010: Wing_Piv04
+    100012: Wing_Piv05
+    100014: Wing_Piv06
+    100016: Wing_Piv07
+    100018: Wing_Piv08
+    100020: YELLOW_GLASS
+    400000: //RootNode
+    400002: WHITE_GLASS
+    400004: Wing_Piv01
+    400006: Wing_Piv02
+    400008: Wing_Piv03
+    400010: Wing_Piv04
+    400012: Wing_Piv05
+    400014: Wing_Piv06
+    400016: Wing_Piv07
+    400018: Wing_Piv08
+    400020: YELLOW_GLASS
+    2300000: WHITE_GLASS
+    2300002: Wing_Piv01
+    2300004: Wing_Piv02
+    2300006: Wing_Piv03
+    2300008: Wing_Piv04
+    2300010: Wing_Piv05
+    2300012: Wing_Piv06
+    2300014: Wing_Piv07
+    2300016: Wing_Piv08
+    2300018: YELLOW_GLASS
+    3300000: WHITE_GLASS
+    3300002: Wing_Piv01
+    3300004: Wing_Piv02
+    3300006: Wing_Piv03
+    3300008: Wing_Piv04
+    3300010: Wing_Piv05
+    3300012: Wing_Piv06
+    3300014: Wing_Piv07
+    3300016: Wing_Piv08
+    3300018: YELLOW_GLASS
+    4300000: WHITE_GLASS
+    4300002: Wing_Piv01
+    4300004: Wing_Piv02
+    4300006: Wing_Piv03
+    4300008: Wing_Piv04
+    4300010: Wing_Piv05
+    4300012: Wing_Piv06
+    4300014: Wing_Piv07
+    4300016: Wing_Piv08
+    4300018: YELLOW_GLASS
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 
