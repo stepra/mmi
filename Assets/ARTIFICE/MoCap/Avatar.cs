@@ -258,7 +258,8 @@ public class Avatar : MonoBehaviour {
 			if(parentTrans)
 			{
 				//repeat the parent translation, which Unity has compensated for
-				transform.localRotation=parentTrans.rotation;
+				//lukas
+				//transform.localRotation=parentTrans.rotation;
 			}
 			//set tracked translation
 			if(translationObject)

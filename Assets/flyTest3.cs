@@ -28,9 +28,10 @@ public class flyTest3 : MonoBehaviour {
 	private string incType = "";
 	private float inc2 = 1.0f;
 	private string incType2 = "";
+	
 	void Start () {
 		rigidbody.freezeRotation = true;
-		lastCheckpoint = GameObject.Find("start");
+		lastCheckpoint = GameObject.Find("checkbox_start");
 		checkpointID = ((checkpoint)lastCheckpoint.GetComponent("checkpoint")).id;
 
 	}
