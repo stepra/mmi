@@ -4,6 +4,7 @@ using System.Collections;
 public class crashForce : MonoBehaviour {
 	
 	public float force;
+	public float energyLoss;
 
 	// Use this for initialization
 	void Start () {

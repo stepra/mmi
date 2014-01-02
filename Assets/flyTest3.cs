@@ -147,11 +147,11 @@ public class flyTest3 : MonoBehaviour {
 					lifes--;
 				
 					if(lifes>0){
-						transform.position = lastCheckpoint.transform.position + new Vector3(0.0f,10.0f,0.0f);
+						transform.position = lastCheckpoint.transform.position + new Vector3(0.0f,5.0f,0.0f);
 						StartCoroutine(waiting(3));
 					}
 					else if(lifes<=0){
-						transform.position = GameObject.Find("start").transform.position + new Vector3(0.0f,10.0f,0.0f);
+						transform.position = GameObject.Find("start").transform.position + new Vector3(0.0f,5.0f,0.0f);
 						StartCoroutine(waiting(3));
 					}
 					
@@ -243,6 +243,7 @@ public class flyTest3 : MonoBehaviour {
 		}
 			else if(other.gameObject.tag=="hurdle"){
 					cf = (crashForce)other.gameObject.GetComponent("crashForce");
+					energy-= cf.energyLoss;
 					Invoke("disableCrashForce", 1);
 		}
 			else if(other.gameObject.tag=="life"){
