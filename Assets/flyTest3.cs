@@ -30,7 +30,8 @@ public class flyTest3 : MonoBehaviour {
 	private string incType2 = "";
 	
 
-	
+	private bool wabeColl = false;
+
 	void Start () {
 		rigidbody.freezeRotation = true;
 		lastCheckpoint = GameObject.Find("checkbox_start");
@@ -169,6 +170,9 @@ public class flyTest3 : MonoBehaviour {
 				touchGround=false;
 			}
 		}
+		else if(wabeColl){
+			rigidbody.velocity = new Vector3(0.0f,0.0f,0.0f);
+		}
 		else{
 			rigidbody.velocity = (transform.forward*100.0f*pitch) + (transform.up*100.0f*throttle);	
 			
@@ -257,6 +261,10 @@ public class flyTest3 : MonoBehaviour {
 			else if(other.gameObject.tag=="life"){
 					Destroy(other.gameObject);
 					lifes++;
+		}
+		
+		else if(other.gameObject.tag=="wabe"){
+					wabeColl=true;
 		}
 		
 	}
