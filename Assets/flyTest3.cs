@@ -31,7 +31,12 @@ public class flyTest3 : MonoBehaviour {
 	
 
 	private bool wabeColl = false;
+<<<<<<< HEAD
 
+=======
+	private GameObject wabe = null;
+	
+>>>>>>> todo wabe austrinken
 	void Start () {
 		rigidbody.freezeRotation = true;
 		lastCheckpoint = GameObject.Find("checkbox_start");
@@ -263,8 +268,10 @@ public class flyTest3 : MonoBehaviour {
 					lifes++;
 		}
 		
+		//TODO: Steffi
 		else if(other.gameObject.tag=="wabe"){
 					wabeColl=true;
+					wabe = other.gameObject;
 		}
 		
 	}
