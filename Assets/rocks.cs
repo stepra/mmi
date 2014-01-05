@@ -16,9 +16,9 @@ public class rocks : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		count++;
-		if(count>100){
+		if(count>50){
 			count=0;
-			rock.transform.localScale = new Vector3(Random.Range(3.0f,15.0f),Random.Range(3.0f,15.0f),Random.Range(3.0f,15.0f));
+			rock.transform.localScale = new Vector3(Random.Range(1.0f,10.0f),Random.Range(1.0f,10.0f),Random.Range(1.0f,10.0f));
 			Object o = Instantiate(rock,startPoint+new Vector3(Random.Range(-30.0f,0),0,Random.Range(-30.0f,0)),Quaternion.identity);
 			Destroy(o,30.0f);
 			
