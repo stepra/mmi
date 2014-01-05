@@ -30,6 +30,7 @@ public class flyTest3 : MonoBehaviour {
 	private string incType2 = "";
 	
 	private bool wabeColl = false;
+	private GameObject wabe = null;
 	
 	void Start () {
 		rigidbody.freezeRotation = true;
@@ -256,8 +257,10 @@ public class flyTest3 : MonoBehaviour {
 					lifes++;
 		}
 		
+		//TODO: Steffi
 		else if(other.gameObject.tag=="wabe"){
 					wabeColl=true;
+					wabe = other.gameObject;
 		}
 		
 	}
