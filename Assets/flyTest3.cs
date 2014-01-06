@@ -31,12 +31,9 @@ public class flyTest3 : MonoBehaviour {
 	
 
 	private bool wabeColl = false;
-<<<<<<< HEAD
 
-=======
 	private GameObject wabe = null;
-	
->>>>>>> todo wabe austrinken
+
 	void Start () {
 		rigidbody.freezeRotation = true;
 		lastCheckpoint = GameObject.Find("checkbox_start");
