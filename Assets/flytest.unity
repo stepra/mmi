@@ -7282,8 +7282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PathInHierarchy: TrackingCamera
   playerPrefab: {fileID: 400002, guid: ced37f5e4c55b4242ae84c3cecd78261, type: 2}
-  spawnOnServer: 0
-  spawnOnClient: 1
+  spawnOnServer: 1
+  spawnOnClient: 0
 --- !u!1 &280860251
 GameObject:
   m_ObjectHideFlags: 0
@@ -18774,6 +18774,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 14800000, guid: b50e2936586886841828cc60fc51d4f7, type: 2}
       propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b50e2936586886841828cc60fc51d4f7, type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -34769,6 +34773,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1340584128}
+  - 148: {fileID: 1340584129}
   m_Layer: 0
   m_Name: TrackingCamera
   m_TagString: MainCamera
@@ -34793,6 +34798,18 @@ Transform:
   - {fileID: 804163262}
   - {fileID: 1368075394}
   m_Father: {fileID: 1732143118}
+--- !u!148 &1340584129
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1340584127}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 1340584128}
+  m_ViewID:
+    m_ID: 6
+    m_Type: 1
 --- !u!1 &1346240022
 GameObject:
   m_ObjectHideFlags: 0
@@ -37555,12 +37572,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 62ca096afb6673e429a28eec02f137ca, type: 2}
       propertyPath: spawnOnServer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 62ca096afb6673e429a28eec02f137ca, type: 2}
       propertyPath: playerPrefab
       value: 
       objectReference: {fileID: 400002, guid: ced37f5e4c55b4242ae84c3cecd78261, type: 2}
+    - target: {fileID: 11400006, guid: 62ca096afb6673e429a28eec02f137ca, type: 2}
+      propertyPath: spawnOnClient
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62ca096afb6673e429a28eec02f137ca, type: 2}
   m_RootGameObject: {fileID: 1732143117}
@@ -53640,7 +53661,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2111481201}
   - 114: {fileID: 2111481202}
-  - 148: {fileID: 2111481203}
   m_Layer: 0
   m_Name: Spacemouse
   m_TagString: Untagged
@@ -53674,18 +53694,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deviceName: SpaceMouse
   scalePosition: 20
---- !u!148 &2111481203
-NetworkView:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2111481200}
-  m_Enabled: 1
-  m_StateSynchronization: 1
-  m_Observed: {fileID: 2111481201}
-  m_ViewID:
-    m_ID: 5
-    m_Type: 1
 --- !u!1 &2112239073
 GameObject:
   m_ObjectHideFlags: 0

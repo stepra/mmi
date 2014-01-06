@@ -121,8 +121,8 @@ public class TrackSpaceMouse : TrackProvider
 		_translateIsActive = true;
 		_savedRotation = Quaternion.identity;
 		
-		_is1stPersonMirrowActive = false;
-		_is1stPersonNonMirrowActive = true;
+		_is1stPersonMirrowActive = true;
+		_is1stPersonNonMirrowActive = false;
 		
 		// open tracker data is rotated -> compensate for correct calculation of complete rotation
 		if (_is1stPersonMirrowActive)
@@ -133,7 +133,7 @@ public class TrackSpaceMouse : TrackProvider
 		}
 		else if (_is1stPersonNonMirrowActive)
 		{
-			
+			//compensateOTRotation = Quaternion.Euler(270.0f, 180.0f, 180.0f);
 			_compensateOTRotation = Quaternion.Euler(270.0f, 180.0f, 180.0f); // TODO: find angles which compensate OT rotation to 0/0/0 -> with this rotated to 360/0/0
 			_zeroValues = new Vector3(360.0f, 0.0f, 0.0f);
 		}
@@ -172,6 +172,11 @@ public class TrackSpaceMouse : TrackProvider
 				// perform transform 
 				handlePosition(position);
 				handleOrientation(orientation);	
+				if(Input.GetButton("origin")){
+					
+					transform.localPosition = _zeroValues;
+				
+				}
 				
 	        } catch (System.Exception ex) 
 	        {
@@ -190,11 +195,10 @@ public class TrackSpaceMouse : TrackProvider
 	private void handlePosition(Vector3 position)
 	{
 		
-		
 		// if button 2 has been released -> (de)active translation
 		if (button2State == 2) 
 		{
-			/*
+			
 			if(_translateIsActive)
 			{
 				_translateIsActive = false;
@@ -205,15 +209,16 @@ public class TrackSpaceMouse : TrackProvider
 				_translateIsActive = true;
 				Debug.Log("Translate activated");
 			}
-			*/
 		}
 		
 		if (_translateIsActive)
 		{
 			// sum up position values
-			position =  gameObject.transform.localPosition + (position * base.scalePosition) ;
+			position = (position * base.scalePosition) + gameObject.transform.localPosition;
+			
 			transform.localPosition = position;
 		}
+		
 	}
 	
 	/// <summary>
@@ -315,5 +320,10 @@ public class TrackSpaceMouse : TrackProvider
 			_button3State = 0;
 		}
 	}
+	
+	/*
+	 * Trace keyboard! for back to origin!
+	 */ 
+	 	
 	
 }

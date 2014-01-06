@@ -29,6 +29,8 @@ public class flyTest3 : MonoBehaviour {
 	private float inc2 = 1.0f;
 	private string incType2 = "";
 	
+
+	
 	void Start () {
 		rigidbody.freezeRotation = true;
 		lastCheckpoint = GameObject.Find("checkbox_start");
@@ -42,9 +44,12 @@ public class flyTest3 : MonoBehaviour {
        
     void FixedUpdate ()
     {
+		if(networkView.isMine)
+		{
 			speed();
 			steer();
-    }
+		}
+	  }
 	
 	
 		void OnGUI()
@@ -147,11 +152,11 @@ public class flyTest3 : MonoBehaviour {
 					lifes--;
 				
 					if(lifes>0){
-						transform.position = lastCheckpoint.transform.position + new Vector3(0.0f,10.0f,0.0f);
+						rigidbody.position = lastCheckpoint.transform.position + new Vector3(0.0f,10.0f,0.0f);
 						StartCoroutine(waiting(3));
 					}
 					else if(lifes<=0){
-						transform.position = GameObject.Find("start").transform.position + new Vector3(0.0f,10.0f,0.0f);
+						rigidbody.position = GameObject.Find("start").transform.position + new Vector3(0.0f,10.0f,0.0f);
 						StartCoroutine(waiting(3));
 					}
 					

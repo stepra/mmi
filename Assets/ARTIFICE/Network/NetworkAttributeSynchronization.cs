@@ -22,24 +22,44 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * =====================================================================================
+*/
+
+/*
+ *REFERENCE fix network lag
+ * http://www.paladinstudios.com/2013/07/10/how-to-create-an-online-multiplayer-game-with-unity/
  */
 
 using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// 
-/// 
-/// 
-/// 
-/// </summary>
+
 public class NetworkAttributeSynchronization :  MonoBehaviour
 {
 	public bool distributePos = true;
 	public bool distributeRot = true;
 	public bool distributeVisibility = true;
-
-    /// <summary>
+	public bool distributeActivSelf = true;
+	///Network Lag Solution through interpolation
+	private float lastSynchronizationTime = 0f;
+	private float syncDelay = 0.0f;
+	private float syncTime = 0.0f;
+	private Vector3 syncStartPosition = Vector3.zero;
+	private Vector3 syncEndPosition = Vector3.zero;
+	private bool interpolate = false;
+	
+	void Update(){
+		if(!networkView.isMine && interpolate){
+			synchronizePosition();
+		}
+	}
+	
+	private void synchronizePosition(){
+		syncTime += Time.deltaTime;
+		rigidbody.position = Vector3.Lerp(syncStartPosition, syncEndPosition, syncTime / syncDelay) ;
+		//Debug.Log (syncStartPosition +" -> " + transform.localPosition + " -> " +syncEndPosition + "  || moveToward " + syncTime / syncDelay + " || syncTime " + syncTime +" || syncDelay " +syncDelay);
+	}
+	
+	 /// <summary>
     /// Callback to stream data to all other clients and the server.
     /// For the distribution of the position, localRotation, and renderer visibility
     /// </summary>
@@ -47,14 +67,22 @@ public class NetworkAttributeSynchronization :  MonoBehaviour
     /// <param name="info">Info of the sender</param>
     public void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
     {	
+		Vector3 syncVelocity = Vector3.zero;
+		Vector3 syncPosition = Vector3.zero;
         if (stream.isWriting)
         {
             //Executed on the owner of the networkview;
             //position and orientation is distributed over the network
            	if (distributePos)
 			{
-				Vector3 pos = transform.position;
-	            stream.Serialize(ref pos);//"Encode" it, and send it
+				if(GetComponent<Rigidbody>() != null){
+					syncPosition = rigidbody.position;
+	            	stream.Serialize(ref syncPosition);//"Encode" it, and send it
+				
+					syncVelocity = rigidbody.velocity;
+       				stream.Serialize(ref syncVelocity);
+				}
+				
 			}
 			
 			if (distributeRot)
@@ -78,20 +106,40 @@ public class NetworkAttributeSynchronization :  MonoBehaviour
 				}
 				stream.Serialize(ref rendererState);
 			}
-            
-                        
+			
+                      
 			
 		
         }
         else
         {
+			Debug.Log("distributePos");
             //Executed on the others; in this case the Clients and Server
             //The clients receive a pos & orient and set the object to it
 			if (distributePos)
 			{
-				Vector3 posReceive = Vector3.zero;
-	            stream.Serialize(ref posReceive); //"Decode" it and receive it
-				transform.position = posReceive;
+			
+	            stream.Serialize(ref syncPosition); //"Decode" it and receive it
+				stream.Serialize(ref syncVelocity);
+				rigidbody.velocity = syncVelocity;
+				
+				if (syncStartPosition.Equals(Vector3.zero)){
+					rigidbody.position = syncPosition;
+					syncStartPosition = rigidbody.position;
+					}
+				else{
+					syncTime = 0.0f;
+						
+        			syncDelay = Time.time - lastSynchronizationTime;
+        			lastSynchronizationTime = Time.time;
+        			 	
+        			syncEndPosition = syncPosition; //+ syncVelocity * syncDelay;
+        			syncStartPosition = rigidbody.position;
+						
+					if(!interpolate)
+					interpolate = true;
+				}
+			
 			}
 			
 			if (distributeRot)
@@ -118,6 +166,7 @@ public class NetworkAttributeSynchronization :  MonoBehaviour
 					}
 				}
 			}
+			
 			
         }
     }

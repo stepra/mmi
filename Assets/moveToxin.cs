@@ -23,7 +23,7 @@ public class moveToxin : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log("direction: " + direction);
+		//Debug.Log("direction: " + direction);
 		transform.localPosition = transform.localPosition + direction* speed;
 		
 		Vector3 temp = startPos- transform.localPosition;
@@ -41,11 +41,16 @@ public class moveToxin : MonoBehaviour {
 		}
 	}
 	
-	void OnTriggerEnter(Collider bee)
+	void OnTriggerEnter(Collider coll)
 	{
-		Debug.Log("collide");
-	   	if(bee.gameObject.tag=="hurdle"){
-	    	Destroy(bee.gameObject);   
+		
+	   	if(coll.gameObject.tag=="hurdle"){
+	    	Destroy(coll.gameObject);   
+			Debug.Log("collide with bee");
+		}
+		
+		if(coll.gameObject.tag=="player"){
+	    	Debug.Log("collide with bird: TODO ENERGIE LOSS");  
 			
 		}
 	}

@@ -50,6 +50,8 @@ public class SpawnPrefab : MonoBehaviour {
 		if(spawnOnClient)
 		{
 			SpawnNetworkObject();
+			
+			
 		}
 	}
 	
@@ -73,13 +75,14 @@ public class SpawnPrefab : MonoBehaviour {
         Network.Instantiate(playerPrefab, transform.position, transform.rotation, 0);
 		this.networkView.RPC("relocateObjectRPC", RPCMode.AllBuffered);
 		
+		/*
 		// enable IT selection gui
 		GameObject itSelection=GameObject.Find("ITSelection");
 		if(itSelection)
 		{
 			itSelection.GetComponent<ITSelectionGUI>().enabled = true;
 		}
-		
+		*/
     }
 	
 	/// <summary>

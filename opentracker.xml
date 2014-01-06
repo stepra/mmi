@@ -12,14 +12,14 @@
 	<ConsoleSink comment="Spacenavigator console" active="on">
 		<UnitySink name="SpaceMouse">
 			<!-- 1st person view, rotate by 180° around y-axis without x-axes mirrowing-->
-			<EventTransform scale="-0.01 -0.01 -0.01" rotationtype="euler" rotation="1.57 3.14159 3.14159" translation="0 0 0">
+			<!--<EventTransform scale="-0.01 -0.01 -0.01" rotationtype="euler" rotation="1.57 3.14159 3.14159" translation="0 0 0">-->
 			
 			<!-- 1st person view, rotate by 180° around y-axis with x-axes mirrowing-->
 			<!--<EventTransform scale="0.01 0.01 0.01" rotationtype="euler" rotation="1.57 0 0" translation="0 0 0">-->
 			
 			<!-- 3rd person view -->
 			<!-- Rotate coordinate system by x = 270° ( = Unity3D.x) = z = 180 deg ( = Unity3D.y) -->
-			<!--<EventTransform scale="-0.01 -0.01 -0.01" rotationtype="euler" rotation="1.57 0 3.14159" translation="0 0 0">-->
+			<EventTransform scale="-0.01 -0.01 -0.01" rotationtype="euler" rotation="1.57 0 3.14159" translation="0 0 0">
 				<SpaceDeviceSource />
 			</EventTransform>
 		</UnitySink>

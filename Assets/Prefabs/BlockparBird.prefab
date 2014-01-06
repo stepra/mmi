@@ -72,9 +72,10 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: BlockparBird
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,6 +276,7 @@ GameObject:
   - 124: {fileID: 12400000}
   - 92: {fileID: 9200000}
   - 81: {fileID: 8100000}
+  - 148: {fileID: 14800002}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -614,7 +616,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .709803939, g: .709803939, b: .709803939, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -802,6 +804,21 @@ MonoBehaviour:
   - name: RightFoot
     transf: {fileID: 0}
     spawnParentObjectName: TrackingCamera
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f062ba1e3815e448a605096c3f326b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distributePos: 1
+  distributeRot: 1
+  distributeVisibility: 1
+  distributeActivSelf: 1
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -861,7 +878,19 @@ NetworkView:
   m_GameObject: {fileID: 100008}
   m_Enabled: 1
   m_StateSynchronization: 1
-  m_Observed: {fileID: 400008}
+  m_Observed: {fileID: 11400006}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
+--- !u!148 &14800002
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100034}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400034}
   m_ViewID:
     m_ID: 0
     m_Type: 0
